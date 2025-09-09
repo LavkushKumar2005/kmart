@@ -1,0 +1,960 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A8B2977B-6D71-41DF-AD03-5AE714E4276F}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MyprojectReale_state</RootNamespace>
+    <AssemblyName>MyprojectReale-state</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44393</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.2.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.9\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.9\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminZoneController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tbl_contact.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tbl_Enquery.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tbl_Feedback.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tbl_Login.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_registor.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\assets\css\style.css" />
+    <Content Include="Content\assets\img\about.jpg" />
+    <Content Include="Content\assets\img\apple-touch-icon.png" />
+    <Content Include="Content\assets\img\course-1.jpg" />
+    <Content Include="Content\assets\img\course-2.jpg" />
+    <Content Include="Content\assets\img\course-3.jpg" />
+    <Content Include="Content\assets\img\course-details-tab-1.png" />
+    <Content Include="Content\assets\img\course-details-tab-2.png" />
+    <Content Include="Content\assets\img\course-details-tab-3.png" />
+    <Content Include="Content\assets\img\course-details-tab-4.png" />
+    <Content Include="Content\assets\img\course-details-tab-5.png" />
+    <Content Include="Content\assets\img\course-details.jpg" />
+    <Content Include="Content\assets\img\events-1.jpg" />
+    <Content Include="Content\assets\img\favicon.png" />
+    <Content Include="Content\assets\img\hero-bg.jpg" />
+    <Content Include="Content\assets\img\rty.jpg" />
+    <Content Include="Content\assets\img\testimonials\testimonials-1.jpg" />
+    <Content Include="Content\assets\img\testimonials\testimonials-2.jpg" />
+    <Content Include="Content\assets\img\testimonials\testimonials-3.jpg" />
+    <Content Include="Content\assets\img\testimonials\testimonials-4.jpg" />
+    <Content Include="Content\assets\img\testimonials\testimonials-5.jpg" />
+    <Content Include="Content\assets\img\trainers\trainer-1.jpg" />
+    <Content Include="Content\assets\img\trainers\trainer-2.jpg" />
+    <Content Include="Content\assets\img\trainers\trainer-3.jpg" />
+    <Content Include="Content\assets\js\main.js" />
+    <Content Include="Content\assets\vendor\animate.css\animate.compat.css" />
+    <Content Include="Content\assets\vendor\animate.css\animate.css" />
+    <Content Include="Content\assets\vendor\animate.css\animate.min.css" />
+    <Content Include="Content\assets\vendor\aos\aos.css" />
+    <Content Include="Content\assets\vendor\aos\aos.js" />
+    <Content Include="Content\assets\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Content\assets\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Content\assets\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Content\assets\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Content\assets\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\assets\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\assets\vendor\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="Content\assets\vendor\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="Content\assets\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\assets\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\assets\vendor\boxicons\css\animations.css" />
+    <Content Include="Content\assets\vendor\boxicons\css\boxicons.css" />
+    <Content Include="Content\assets\vendor\boxicons\css\boxicons.min.css" />
+    <Content Include="Content\assets\vendor\boxicons\css\transformations.css" />
+    <Content Include="Content\assets\vendor\boxicons\fonts\boxicons.svg" />
+    <Content Include="Content\assets\vendor\counterup\counterup.min.js" />
+    <Content Include="Content\assets\vendor\icofont\icofont.min.css" />
+    <Content Include="Content\assets\vendor\jquery.easing\jquery.easing.min.js" />
+    <Content Include="Content\assets\vendor\jquery\jquery.min.js" />
+    <Content Include="Content\assets\vendor\owl.carousel\assets\ajax-loader.gif" />
+    <Content Include="Content\assets\vendor\owl.carousel\assets\owl.carousel.css" />
+    <Content Include="Content\assets\vendor\owl.carousel\assets\owl.carousel.min.css" />
+    <Content Include="Content\assets\vendor\owl.carousel\assets\owl.theme.default.css" />
+    <Content Include="Content\assets\vendor\owl.carousel\assets\owl.theme.default.min.css" />
+    <Content Include="Content\assets\vendor\owl.carousel\assets\owl.theme.green.css" />
+    <Content Include="Content\assets\vendor\owl.carousel\assets\owl.theme.green.min.css" />
+    <Content Include="Content\assets\vendor\owl.carousel\assets\owl.video.play.png" />
+    <Content Include="Content\assets\vendor\owl.carousel\owl.carousel.js" />
+    <Content Include="Content\assets\vendor\owl.carousel\owl.carousel.min.js" />
+    <Content Include="Content\assets\vendor\php-email-form\changelog.txt" />
+    <Content Include="Content\assets\vendor\php-email-form\validate.js" />
+    <Content Include="Content\assets\vendor\remixicon\remixicon.css" />
+    <Content Include="Content\assets\vendor\remixicon\remixicon.svg" />
+    <Content Include="Content\assets\vendor\remixicon\remixicon.symbol.svg" />
+    <Content Include="Content\assets\vendor\waypoints\jquery.waypoints.min.js" />
+    <Content Include="Content\b4\1 - Copy - Copy.jpg" />
+    <Content Include="Content\b4\1 - Copy.jpg" />
+    <Content Include="Content\b4\1.html" />
+    <Content Include="Content\b4\1.jpg" />
+    <Content Include="Content\b4\12 - Copy - Copy.png" />
+    <Content Include="Content\b4\12 - Copy.png" />
+    <Content Include="Content\b4\12.png" />
+    <Content Include="Content\b4\1_files\bootstrap-icons.min.css" />
+    <Content Include="Content\b4\1_files\docs.css" />
+    <Content Include="Content\b4\21 - Copy - Copy.png" />
+    <Content Include="Content\b4\21 - Copy.png" />
+    <Content Include="Content\b4\21.png" />
+    <Content Include="Content\b4\4 - Copy - Copy.jpg" />
+    <Content Include="Content\b4\4 - Copy.jpg" />
+    <Content Include="Content\b4\4.jpg" />
+    <Content Include="Content\b4\45.html" />
+    <Content Include="Content\b4\46 - Copy - Copy.html" />
+    <Content Include="Content\b4\46 - Copy.html" />
+    <Content Include="Content\b4\46.html" />
+    <Content Include="Content\b4\4_files\bootstrap-icons.min.css" />
+    <Content Include="Content\b4\4_files\docs.css" />
+    <Content Include="Content\b4\aa - Copy - Copy.jpg" />
+    <Content Include="Content\b4\aa - Copy.jpg" />
+    <Content Include="Content\b4\aa.jpg" />
+    <Content Include="Content\b4\AKTU Logo - Copy - Copy.png" />
+    <Content Include="Content\b4\AKTU Logo - Copy.png" />
+    <Content Include="Content\b4\AKTU Logo.png" />
+    <Content Include="Content\b4\aktu.css" />
+    <Content Include="Content\b4\apj - Copy - Copy.png" />
+    <Content Include="Content\b4\apj - Copy.png" />
+    <Content Include="Content\b4\apj.png" />
+    <Content Include="Content\b4\assets\css\style.css" />
+    <Content Include="Content\b4\assets\img\about.jpg" />
+    <Content Include="Content\b4\assets\img\apple-touch-icon.png" />
+    <Content Include="Content\b4\assets\img\course-1.jpg" />
+    <Content Include="Content\b4\assets\img\course-2.jpg" />
+    <Content Include="Content\b4\assets\img\course-3.jpg" />
+    <Content Include="Content\b4\assets\img\course-details-tab-1.png" />
+    <Content Include="Content\b4\assets\img\course-details-tab-2.png" />
+    <Content Include="Content\b4\assets\img\course-details-tab-3.png" />
+    <Content Include="Content\b4\assets\img\course-details-tab-4.png" />
+    <Content Include="Content\b4\assets\img\course-details-tab-5.png" />
+    <Content Include="Content\b4\assets\img\course-details.jpg" />
+    <Content Include="Content\b4\assets\img\events-1.jpg" />
+    <Content Include="Content\b4\assets\img\favicon.png" />
+    <Content Include="Content\b4\assets\img\hero-bg.jpg" />
+    <Content Include="Content\b4\assets\img\rty.jpg" />
+    <Content Include="Content\b4\assets\img\testimonials\testimonials-1.jpg" />
+    <Content Include="Content\b4\assets\img\testimonials\testimonials-2.jpg" />
+    <Content Include="Content\b4\assets\img\testimonials\testimonials-3.jpg" />
+    <Content Include="Content\b4\assets\img\testimonials\testimonials-4.jpg" />
+    <Content Include="Content\b4\assets\img\testimonials\testimonials-5.jpg" />
+    <Content Include="Content\b4\assets\img\trainers\trainer-1.jpg" />
+    <Content Include="Content\b4\assets\img\trainers\trainer-2.jpg" />
+    <Content Include="Content\b4\assets\img\trainers\trainer-3.jpg" />
+    <Content Include="Content\b4\assets\js\main.js" />
+    <Content Include="Content\b4\assets\vendor\animate.css\animate.compat.css" />
+    <Content Include="Content\b4\assets\vendor\animate.css\animate.css" />
+    <Content Include="Content\b4\assets\vendor\animate.css\animate.min.css" />
+    <Content Include="Content\b4\assets\vendor\aos\aos.css" />
+    <Content Include="Content\b4\assets\vendor\aos\aos.js" />
+    <Content Include="Content\b4\assets\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Content\b4\assets\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Content\b4\assets\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Content\b4\assets\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Content\b4\assets\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\b4\assets\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\b4\assets\vendor\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="Content\b4\assets\vendor\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="Content\b4\assets\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\b4\assets\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\b4\assets\vendor\boxicons\css\animations.css" />
+    <Content Include="Content\b4\assets\vendor\boxicons\css\boxicons.css" />
+    <Content Include="Content\b4\assets\vendor\boxicons\css\boxicons.min.css" />
+    <Content Include="Content\b4\assets\vendor\boxicons\css\transformations.css" />
+    <Content Include="Content\b4\assets\vendor\boxicons\fonts\boxicons.svg" />
+    <Content Include="Content\b4\assets\vendor\counterup\counterup.min.js" />
+    <Content Include="Content\b4\assets\vendor\icofont\icofont.min.css" />
+    <Content Include="Content\b4\assets\vendor\jquery.easing\jquery.easing.min.js" />
+    <Content Include="Content\b4\assets\vendor\jquery\jquery.min.js" />
+    <Content Include="Content\b4\assets\vendor\owl.carousel\assets\ajax-loader.gif" />
+    <Content Include="Content\b4\assets\vendor\owl.carousel\assets\owl.carousel.css" />
+    <Content Include="Content\b4\assets\vendor\owl.carousel\assets\owl.carousel.min.css" />
+    <Content Include="Content\b4\assets\vendor\owl.carousel\assets\owl.theme.default.css" />
+    <Content Include="Content\b4\assets\vendor\owl.carousel\assets\owl.theme.default.min.css" />
+    <Content Include="Content\b4\assets\vendor\owl.carousel\assets\owl.theme.green.css" />
+    <Content Include="Content\b4\assets\vendor\owl.carousel\assets\owl.theme.green.min.css" />
+    <Content Include="Content\b4\assets\vendor\owl.carousel\assets\owl.video.play.png" />
+    <Content Include="Content\b4\assets\vendor\owl.carousel\owl.carousel.js" />
+    <Content Include="Content\b4\assets\vendor\owl.carousel\owl.carousel.min.js" />
+    <Content Include="Content\b4\assets\vendor\php-email-form\changelog.txt" />
+    <Content Include="Content\b4\assets\vendor\php-email-form\validate.js" />
+    <Content Include="Content\b4\assets\vendor\remixicon\remixicon.css" />
+    <Content Include="Content\b4\assets\vendor\remixicon\remixicon.svg" />
+    <Content Include="Content\b4\assets\vendor\remixicon\remixicon.symbol.svg" />
+    <Content Include="Content\b4\assets\vendor\waypoints\jquery.waypoints.min.js" />
+    <Content Include="Content\b4\bg - Copy - Copy.jpg" />
+    <Content Include="Content\b4\bg - Copy.jpg" />
+    <Content Include="Content\b4\bg.jpg" />
+    <Content Include="Content\b4\Boot3Lib\boot.html" />
+    <Content Include="Content\b4\Boot3Lib\boot1.css" />
+    <Content Include="Content\b4\Boot3Lib\boot1.html" />
+    <Content Include="Content\b4\Boot3Lib\boot4.html" />
+    <Content Include="Content\b4\Boot3Lib\boot5.html" />
+    <Content Include="Content\b4\Boot3Lib\boot6.html" />
+    <Content Include="Content\b4\Boot3Lib\boot8.html" />
+    <Content Include="Content\b4\Boot3Lib\bootstrap task.html" />
+    <Content Include="Content\b4\Boot3Lib\css\bootstrap-theme.min.css" />
+    <Content Include="Content\b4\Boot3Lib\css\bootstrap.min.css" />
+    <Content Include="Content\b4\Boot3Lib\css\font-awesome.min.css" />
+    <Content Include="Content\b4\Boot3Lib\css\hover-min.css" />
+    <Content Include="Content\b4\Boot3Lib\demo class .html" />
+    <Content Include="Content\b4\Boot3Lib\demo.html" />
+    <Content Include="Content\b4\Boot3Lib\demo2.html" />
+    <Content Include="Content\b4\Boot3Lib\demo3.html" />
+    <Content Include="Content\b4\Boot3Lib\demo4.html" />
+    <Content Include="Content\b4\Boot3Lib\demoboot.html" />
+    <Content Include="Content\b4\Boot3Lib\demoboot3.html" />
+    <Content Include="Content\b4\Boot3Lib\jpg.jpg" />
+    <Content Include="Content\b4\Boot3Lib\js\bootstrap.js" />
+    <Content Include="Content\b4\Boot3Lib\js\bootstrap.min.js" />
+    <Content Include="Content\b4\Boot3Lib\js\jquery-ui.js" />
+    <Content Include="Content\b4\Boot3Lib\js\jquery-ui.min.js" />
+    <Content Include="Content\b4\Boot3Lib\js\jquery.js" />
+    <Content Include="Content\b4\Boot3Lib\js\js\bootstrap.js" />
+    <Content Include="Content\b4\Boot3Lib\js\js\bootstrap.min.js" />
+    <Content Include="Content\b4\Boot3Lib\js\js\jquery-ui.js" />
+    <Content Include="Content\b4\Boot3Lib\js\js\jquery-ui.min.js" />
+    <Content Include="Content\b4\Boot3Lib\js\js\jquery.js" />
+    <Content Include="Content\b4\Boot3Lib\kjpd.html" />
+    <Content Include="Content\b4\Boot3Lib\LK.jpg" />
+    <Content Include="Content\b4\Boot3Lib\roh.jpg" />
+    <Content Include="Content\b4\Boot3Lib\rohit.jpg" />
+    <Content Include="Content\b4\Boot3Lib\roko.jpg" />
+    <Content Include="Content\b4\Boot3Lib\roko2.jpg" />
+    <Content Include="Content\b4\Boot3Lib\web1.jpg" />
+    <Content Include="Content\b4\boot9.html" />
+    <Content Include="Content\b4\class code HTML\lk.html" />
+    <Content Include="Content\b4\class code HTML\lk.mp4.mkv" />
+    <Content Include="Content\b4\class code HTML\lkmd.html" />
+    <Content Include="Content\b4\class code HTML\lkmda.html" />
+    <Content Include="Content\b4\class code HTML\new program html.html" />
+    <Content Include="Content\b4\class code HTML\new program html1.html" />
+    <Content Include="Content\b4\class code HTML\new program html2.html" />
+    <Content Include="Content\b4\class code HTML\new.html" />
+    <Content Include="Content\b4\class code HTML\nn.html" />
+    <Content Include="Content\b4\class code HTML\task4.html" />
+    <Content Include="Content\b4\css\animate.min.css" />
+    <Content Include="Content\b4\css\aos.css" />
+    <Content Include="Content\b4\css\bootstrap.min.css" />
+    <Content Include="Content\b4\css\boxicons.min.css" />
+    <Content Include="Content\b4\css\font-awesome.min.css" />
+    <Content Include="Content\b4\css\icofont.min.css" />
+    <Content Include="Content\b4\css\owl.carousel.min.css" />
+    <Content Include="Content\b4\css\style.css" />
+    <Content Include="Content\b4\demo 6 .html" />
+    <Content Include="Content\b4\demo 6.html" />
+    <Content Include="Content\b4\demo5.html" />
+    <Content Include="Content\b4\demo6.html" />
+    <Content Include="Content\b4\demo8.html" />
+    <Content Include="Content\b4\Dr a.p.j Abul kalam - Copy - Copy.html" />
+    <Content Include="Content\b4\Dr a.p.j Abul kalam - Copy.html" />
+    <Content Include="Content\b4\Dr a.p.j Abul kalam.html" />
+    <Content Include="Content\b4\dul - Copy - Copy.jpeg" />
+    <Content Include="Content\b4\dul - Copy.jpeg" />
+    <Content Include="Content\b4\dul.jpeg" />
+    <Content Include="Content\b4\dul1 - Copy - Copy.jpg" />
+    <Content Include="Content\b4\dul1 - Copy.jpg" />
+    <Content Include="Content\b4\dul1.jpg" />
+    <Content Include="Content\b4\dul3 - Copy - Copy.jpg" />
+    <Content Include="Content\b4\dul3 - Copy.jpg" />
+    <Content Include="Content\b4\dul3.jpg" />
+    <Content Include="Content\b4\HTML 2025\task\download.jpeg" />
+    <Content Include="Content\b4\HTML 2025\task\jpg.jpg" />
+    <Content Include="Content\b4\HTML 2025\task\task1.html" />
+    <Content Include="Content\b4\HTML 2025\task\task2.html" />
+    <Content Include="Content\b4\HTML 2025\task\task3.html" />
+    <Content Include="Content\b4\icofont\icofont.min.css" />
+    <Content Include="Content\b4\images\favicon.ico" />
+    <Content Include="Content\b4\img-01 - Copy - Copy.jpg" />
+    <Content Include="Content\b4\img-01 - Copy.jpg" />
+    <Content Include="Content\b4\img-01.jpg" />
+    <Content Include="Content\b4\js\aos.css" />
+    <Content Include="Content\b4\js\aos.js" />
+    <Content Include="Content\b4\js\counterup.min.js" />
+    <Content Include="Content\b4\js\jquery.min.js" />
+    <Content Include="Content\b4\js\jquery.waypoints.min.js" />
+    <Content Include="Content\b4\js\main.js" />
+    <Content Include="Content\b4\js\owl.carousel.js" />
+    <Content Include="Content\b4\js\owl.carousel.min.js" />
+    <Content Include="Content\b4\lk demo.html" />
+    <Content Include="Content\b4\LK.jpg" />
+    <Content Include="Content\b4\lkmda.html" />
+    <Content Include="Content\b4\logo - Copy - Copy.png" />
+    <Content Include="Content\b4\logo - Copy.png" />
+    <Content Include="Content\b4\logo-1 - Copy - Copy.jpg" />
+    <Content Include="Content\b4\logo-1 - Copy.jpg" />
+    <Content Include="Content\b4\logo-1.jpg" />
+    <Content Include="Content\b4\logo.png" />
+    <Content Include="Content\b4\md - Copy - Copy.jpg" />
+    <Content Include="Content\b4\md - Copy.jpg" />
+    <Content Include="Content\b4\md.jpg" />
+    <Content Include="Content\b4\modi - Copy - Copy.jpg" />
+    <Content Include="Content\b4\modi - Copy.jpg" />
+    <Content Include="Content\b4\modi.jpg" />
+    <Content Include="Content\b4\moon - Copy - Copy.jpg" />
+    <Content Include="Content\b4\moon - Copy.jpg" />
+    <Content Include="Content\b4\moon.jpg" />
+    <Content Include="Content\b4\my - Copy %282%29.jpg" />
+    <Content Include="Content\b4\my - Copy - Copy.jpg" />
+    <Content Include="Content\b4\my - Copy.jpg" />
+    <Content Include="Content\b4\my.jpg" />
+    <Content Include="Content\b4\new 9.txt" />
+    <Content Include="Content\b4\new16.html" />
+    <Content Include="Content\b4\nnn - Copy.jpg" />
+    <Content Include="Content\b4\nnn.jpg" />
+    <Content Include="Content\b4\OIP - Copy.jpg" />
+    <Content Include="Content\b4\OIP.jpg" />
+    <Content Include="Content\b4\park2 - Copy.jpg" />
+    <Content Include="Content\b4\park2.jpg" />
+    <Content Include="Content\b4\parkh - Copy.jpg" />
+    <Content Include="Content\b4\parkh.jpg" />
+    <Content Include="Content\b4\pattern - Copy.png" />
+    <Content Include="Content\b4\pattern.png" />
+    <Content Include="Content\b4\photo - Copy.png" />
+    <Content Include="Content\b4\photo.png" />
+    <Content Include="Content\b4\photo1 - Copy.png" />
+    <Content Include="Content\b4\photo1.png" />
+    <Content Include="Content\b4\photo2 - Copy.png" />
+    <Content Include="Content\b4\photo2.png" />
+    <Content Include="Content\b4\r - Copy.jpg" />
+    <Content Include="Content\b4\r.html" />
+    <Content Include="Content\b4\r.jpg" />
+    <Content Include="Content\b4\ro - Copy.jpg" />
+    <Content Include="Content\b4\ro.jpg" />
+    <Content Include="Content\b4\roh - Copy.jpg" />
+    <Content Include="Content\b4\roh.jpg" />
+    <Content Include="Content\b4\rohit - Copy.jpg" />
+    <Content Include="Content\b4\rohit.jpg" />
+    <Content Include="Content\b4\roko - Copy.jpg" />
+    <Content Include="Content\b4\roko.jpg" />
+    <Content Include="Content\b4\roko2 - Copy.jpg" />
+    <Content Include="Content\b4\roko2.jpg" />
+    <Content Include="Content\b4\roko3 - Copy.jpg" />
+    <Content Include="Content\b4\roko3.jpg" />
+    <Content Include="Content\b4\rr - Copy.jpg" />
+    <Content Include="Content\b4\rr.jpg" />
+    <Content Include="Content\b4\rrr - Copy.jpg" />
+    <Content Include="Content\b4\rrr.jpg" />
+    <Content Include="Content\b4\sh - Copy.jpg" />
+    <Content Include="Content\b4\sh.jpg" />
+    <Content Include="Content\b4\status - Copy.png" />
+    <Content Include="Content\b4\status.png" />
+    <Content Include="Content\b4\syc.png" />
+    <Content Include="Content\b4\sycoriun.html" />
+    <Content Include="Content\b4\task\download.jpeg" />
+    <Content Include="Content\b4\task\jpg.jpg" />
+    <Content Include="Content\b4\task\task1.html" />
+    <Content Include="Content\b4\task\task2.html" />
+    <Content Include="Content\b4\task\task3.html" />
+    <Content Include="Content\b4\text.html" />
+    <Content Include="Content\b4\text_files\10.jpg" />
+    <Content Include="Content\b4\text_files\16740490405.html" />
+    <Content Include="Content\b4\text_files\18.jpg" />
+    <Content Include="Content\b4\text_files\21.jpg" />
+    <Content Include="Content\b4\text_files\3.jpg" />
+    <Content Include="Content\b4\text_files\808965904%281%29.html" />
+    <Content Include="Content\b4\text_files\808965904%282%29.html" />
+    <Content Include="Content\b4\text_files\808965904.html" />
+    <Content Include="Content\b4\text_files\anchor.html" />
+    <Content Include="Content\b4\text_files\bframe.html" />
+    <Content Include="Content\b4\text_files\bootstrap.css" />
+    <Content Include="Content\b4\text_files\f%281%29.txt" />
+    <Content Include="Content\b4\text_files\f%282%29.txt" />
+    <Content Include="Content\b4\text_files\f.txt" />
+    <Content Include="Content\b4\text_files\facebook-app-logo.png" />
+    <Content Include="Content\b4\text_files\fb.png" />
+    <Content Include="Content\b4\text_files\font-awesome.min.css" />
+    <Content Include="Content\b4\text_files\img-01.jpg" />
+    <Content Include="Content\b4\text_files\img-01.png" />
+    <Content Include="Content\b4\text_files\instagram.png" />
+    <Content Include="Content\b4\text_files\like.png" />
+    <Content Include="Content\b4\text_files\linkedin-sign.png" />
+    <Content Include="Content\b4\text_files\logo-footer.png" />
+    <Content Include="Content\b4\text_files\logo.png" />
+    <Content Include="Content\b4\text_files\map.PNG" />
+    <Content Include="Content\b4\text_files\package-05.png" />
+    <Content Include="Content\b4\text_files\saved_resource%281%29.html" />
+    <Content Include="Content\b4\text_files\saved_resource%282%29.html" />
+    <Content Include="Content\b4\text_files\saved_resource.html" />
+    <Content Include="Content\b4\text_files\slick-theme.css" />
+    <Content Include="Content\b4\text_files\slick.css" />
+    <Content Include="Content\b4\text_files\style.css" />
+    <Content Include="Content\b4\text_files\styles__ltr.css" />
+    <Content Include="Content\b4\text_files\top.png" />
+    <Content Include="Content\b4\text_files\twitter-logo.png" />
+    <Content Include="Content\b4\text_files\whatsapp.png" />
+    <Content Include="Content\b4\text_files\ytube.png" />
+    <Content Include="Content\b4\web.html" />
+    <Content Include="Content\Boot3Lib\boot.html" />
+    <Content Include="Content\Boot3Lib\boot1.css" />
+    <Content Include="Content\Boot3Lib\boot1.html" />
+    <Content Include="Content\Boot3Lib\boot4.html" />
+    <Content Include="Content\Boot3Lib\boot5.html" />
+    <Content Include="Content\Boot3Lib\boot6.html" />
+    <Content Include="Content\Boot3Lib\boot8.html" />
+    <Content Include="Content\Boot3Lib\bootstrap task.html" />
+    <Content Include="Content\Boot3Lib\css\bootstrap-theme.min.css" />
+    <Content Include="Content\Boot3Lib\css\bootstrap.min.css" />
+    <Content Include="Content\Boot3Lib\css\font-awesome.min.css" />
+    <Content Include="Content\Boot3Lib\css\hover-min.css" />
+    <Content Include="Content\Boot3Lib\demo class .html" />
+    <Content Include="Content\Boot3Lib\demo.html" />
+    <Content Include="Content\Boot3Lib\demo2.html" />
+    <Content Include="Content\Boot3Lib\demo3.html" />
+    <Content Include="Content\Boot3Lib\demo4.html" />
+    <Content Include="Content\Boot3Lib\demoboot.html" />
+    <Content Include="Content\Boot3Lib\demoboot3.html" />
+    <Content Include="Content\Boot3Lib\jpg.jpg" />
+    <Content Include="Content\Boot3Lib\js\bootstrap.js" />
+    <Content Include="Content\Boot3Lib\js\bootstrap.min.js" />
+    <Content Include="Content\Boot3Lib\js\jquery-ui.js" />
+    <Content Include="Content\Boot3Lib\js\jquery-ui.min.js" />
+    <Content Include="Content\Boot3Lib\js\jquery.js" />
+    <Content Include="Content\Boot3Lib\kjpd.html" />
+    <Content Include="Content\Boot3Lib\LK.jpg" />
+    <Content Include="Content\Boot3Lib\roh.jpg" />
+    <Content Include="Content\Boot3Lib\rohit.jpg" />
+    <Content Include="Content\Boot3Lib\roko.jpg" />
+    <Content Include="Content\Boot3Lib\roko2.jpg" />
+    <Content Include="Content\Boot3Lib\web1.jpg" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\class code HTML\lk.html" />
+    <Content Include="Content\class code HTML\lk.mp4.mkv" />
+    <Content Include="Content\class code HTML\lkmd.html" />
+    <Content Include="Content\class code HTML\lkmda.html" />
+    <Content Include="Content\class code HTML\new program html.html" />
+    <Content Include="Content\class code HTML\new program html1.html" />
+    <Content Include="Content\class code HTML\new program html2.html" />
+    <Content Include="Content\class code HTML\new.html" />
+    <Content Include="Content\class code HTML\nn.html" />
+    <Content Include="Content\class code HTML\task4.html" />
+    <Content Include="Content\css\animate.min.css" />
+    <Content Include="Content\css\aos.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\boxicons.min.css" />
+    <Content Include="Content\css\font-awesome.min.css" />
+    <Content Include="Content\css\icofont.min.css" />
+    <Content Include="Content\css\owl.carousel.min.css" />
+    <Content Include="Content\css\style.css" />
+    <Content Include="Content\dash\css\admin.css" />
+    <Content Include="Content\dash\css\bar.css" />
+    <Content Include="Content\dash\css\bookload.css" />
+    <Content Include="Content\dash\css\bookmcss.css" />
+    <Content Include="Content\dash\css\bootstrap.css" />
+    <Content Include="Content\dash\css\f3.jpg" />
+    <Content Include="Content\dash\css\fontawesome-all.css" />
+    <Content Include="Content\dash\css\pignose.calender.css" />
+    <Content Include="Content\dash\css\simplyCountdown.css" />
+    <Content Include="Content\dash\css\style.css" />
+    <Content Include="Content\dash\css\style4.css" />
+    <Content Include="Content\dash\css\widgets.css" />
+    <Content Include="Content\dash\js\amcharts.js" />
+    <Content Include="Content\dash\js\bootstrap.min.js" />
+    <Content Include="Content\dash\js\chart1.js" />
+    <Content Include="Content\dash\js\circle_bar.js" />
+    <Content Include="Content\dash\js\example.js" />
+    <Content Include="Content\dash\js\index.js" />
+    <Content Include="Content\dash\js\jquery-2.2.3.min.js" />
+    <Content Include="Content\dash\js\jquery.charts.js" />
+    <Content Include="Content\dash\js\kuma-gauge.jquery.js" />
+    <Content Include="Content\dash\js\modernizr.js" />
+    <Content Include="Content\dash\js\moment.min.js" />
+    <Content Include="Content\dash\js\percentage-circles.js" />
+    <Content Include="Content\dash\js\pignose.calender.js" />
+    <Content Include="Content\dash\js\prettymaps.js" />
+    <Content Include="Content\dash\js\raphael-min.js" />
+    <Content Include="Content\dash\js\rumcaJS.js" />
+    <Content Include="Content\dash\js\script.js" />
+    <Content Include="Content\dash\js\SimpleChart.js" />
+    <Content Include="Content\dash\js\simplyCountdown.js" />
+    <Content Include="Content\dash\js\skycons.js" />
+    <Content Include="Content\dash\webfonts\fa-brands-400.svg" />
+    <Content Include="Content\dash\webfonts\fa-regular-400.svg" />
+    <Content Include="Content\dash\webfonts\fa-solid-900.svg" />
+    <Content Include="Content\HTML 2025\task\download.jpeg" />
+    <Content Include="Content\HTML 2025\task\jpg.jpg" />
+    <Content Include="Content\HTML 2025\task\task1.html" />
+    <Content Include="Content\HTML 2025\task\task2.html" />
+    <Content Include="Content\HTML 2025\task\task3.html" />
+    <Content Include="Content\icofont\icofont.min.css" />
+    <Content Include="Content\images\favicon.ico" />
+    <Content Include="Content\img\10.jpg" />
+    <Content Include="Content\img\11.jpg" />
+    <Content Include="Content\img\12.jpg" />
+    <Content Include="Content\img\2.jpg" />
+    <Content Include="Content\img\3.jpg" />
+    <Content Include="Content\img\4.jpg" />
+    <Content Include="Content\img\5.jpg" />
+    <Content Include="Content\img\6.jpg" />
+    <Content Include="Content\img\7.jpg" />
+    <Content Include="Content\img\8.jpg" />
+    <Content Include="Content\img\9.jpg" />
+    <Content Include="Content\img\aaa.jpg" />
+    <Content Include="Content\img\aaax.jpg" />
+    <Content Include="Content\img\Akhleshsir.jpg" />
+    <Content Include="Content\img\AreaConverter2.png" />
+    <Content Include="Content\img\Avinash.jpg" />
+    <Content Include="Content\img\Avinash2.jpg" />
+    <Content Include="Content\img\BudgetIcon2.png" />
+    <Content Include="Content\img\EMICalculator2.png" />
+    <Content Include="Content\img\ff.jpg" />
+    <Content Include="Content\img\gg.jpg" />
+    <Content Include="Content\img\hp_ppf_launch_inline.png" />
+    <Content Include="Content\img\kk.jpg" />
+    <Content Include="Content\img\Laddu.jpg" />
+    <Content Include="Content\img\lavkush.jpg" />
+    <Content Include="Content\img\lk.jpg" />
+    <Content Include="Content\img\LKK.jpg" />
+    <Content Include="Content\img\lkmd.jpg" />
+    <Content Include="Content\img\lkrav.jpg" />
+    <Content Include="Content\img\LL.jpg" />
+    <Content Include="Content\img\pexels-1.jpg" />
+    <Content Include="Content\img\pexels-pixabay-261410.jpg" />
+    <Content Include="Content\img\pexels-pixabay-280229.jpg" />
+    <Content Include="Content\img\pexels-thirdman-8482876.jpg" />
+    <Content Include="Content\img\photo.jpg" />
+    <Content Include="Content\img\Sandeepsir.jpg" />
+    <Content Include="Content\img\suraj.jpg" />
+    <Content Include="Content\img\sw.jpg" />
+    <Content Include="Content\img\Untitled.png" />
+    <Content Include="Content\js\aos.css" />
+    <Content Include="Content\js\aos.js" />
+    <Content Include="Content\js\counterup.min.js" />
+    <Content Include="Content\js\jquery.min.js" />
+    <Content Include="Content\js\jquery.waypoints.min.js" />
+    <Content Include="Content\js\main.js" />
+    <Content Include="Content\js\owl.carousel.js" />
+    <Content Include="Content\js\owl.carousel.min.js" />
+    <Content Include="Content\task\download.jpeg" />
+    <Content Include="Content\task\jpg.jpg" />
+    <Content Include="Content\task\task1.html" />
+    <Content Include="Content\task\task2.html" />
+    <Content Include="Content\task\task3.html" />
+    <Content Include="Content\video\3410663-uhd_2562_1440_30fps.mp4" />
+    <Content Include="Content\video\4770380-hd_1920_1080_30fps.mp4" />
+    <Content Include="Content\video\7578552-uhd_3840_2160_30fps.mp4" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\b4\.vscode\settings.json" />
+    <Content Include="Content\b4\1_files\afe67427d375248a92b1cda7f8a979fd91961d39" />
+    <Content Include="Content\b4\1_files\application.js.download" />
+    <Content Include="Content\b4\1_files\bootstrap.bundle.min.js.download" />
+    <Content Include="Content\b4\1_files\carbon.js.download" />
+    <Content Include="Content\b4\1_files\color-modes.js.download" />
+    <Content Include="Content\b4\1_files\script.js.download" />
+    <Content Include="Content\b4\4_files\afe67427d375248a92b1cda7f8a979fd91961d39" />
+    <Content Include="Content\b4\4_files\application.js.download" />
+    <Content Include="Content\b4\4_files\bootstrap.bundle.min.js.download" />
+    <Content Include="Content\b4\4_files\carbon.js.download" />
+    <Content Include="Content\b4\4_files\color-modes.js.download" />
+    <Content Include="Content\b4\4_files\script.js.download" />
+    <Content Include="Content\b4\assets\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Content\b4\assets\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Content\b4\assets\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Content\b4\assets\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\b4\assets\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Content\b4\assets\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Content\b4\assets\vendor\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="Content\b4\assets\vendor\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Content\b4\assets\vendor\bootstrap\js\bootstrap.js.map" />
+    <Content Include="Content\b4\assets\vendor\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="Content\b4\assets\vendor\boxicons\fonts\boxicons.eot" />
+    <Content Include="Content\b4\assets\vendor\boxicons\fonts\boxicons.ttf" />
+    <Content Include="Content\b4\assets\vendor\boxicons\fonts\boxicons.woff" />
+    <Content Include="Content\b4\assets\vendor\boxicons\fonts\boxicons.woff2" />
+    <Content Include="Content\b4\assets\vendor\icofont\fonts\icofont.woff" />
+    <Content Include="Content\b4\assets\vendor\icofont\fonts\icofont.woff2" />
+    <Content Include="Content\b4\assets\vendor\jquery\jquery.min.map" />
+    <Content Include="Content\b4\assets\vendor\owl.carousel\LICENSE" />
+    <Content Include="Content\b4\assets\vendor\owl.carousel\README.md" />
+    <Content Include="Content\b4\assets\vendor\remixicon\remixicon.eot" />
+    <Content Include="Content\b4\assets\vendor\remixicon\remixicon.less" />
+    <Content Include="Content\b4\assets\vendor\remixicon\remixicon.ttf" />
+    <Content Include="Content\b4\assets\vendor\remixicon\remixicon.woff" />
+    <Content Include="Content\b4\assets\vendor\remixicon\remixicon.woff2" />
+    <Content Include="Content\b4\BootStrap-5.pdf" />
+    <Content Include="Content\b4\Bootstrap-Cheat-Sheet-websitesetup.org_.pdf" />
+    <Content Include="Content\b4\C++ notes pdf.pdf" />
+    <Content Include="Content\b4\gandhi.webp" />
+    <Content Include="Content\b4\icofont\fonts\icofont.woff" />
+    <Content Include="Content\b4\icofont\fonts\icofont.woff2" />
+    <Content Include="Content\b4\js\jquery.min.map" />
+    <Content Include="Content\b4\js\LICENSE" />
+    <Content Include="Content\b4\js\README.md" />
+    <Content Include="Content\b4\OIP.webp" />
+    <Content Include="Content\b4\pat.webp" />
+    <Content Include="Content\b4\patt - Copy.avif" />
+    <Content Include="Content\b4\patt.avif" />
+    <Content Include="Content\b4\result.bteexam.com_even_main_oddresult.aspx_id=RTI0MjcxODM1NTAwMDA4&amp;id2=MDcvMDUvMjAwNQ== - Copy.pdf" />
+    <Content Include="Content\b4\result.bteexam.com_even_main_oddresult.aspx_id=RTI0MjcxODM1NTAwMDA4&amp;id2=MDcvMDUvMjAwNQ==.pdf" />
+    <Content Include="Content\b4\sy - Copy.webp" />
+    <Content Include="Content\b4\sy.webp" />
+    <Content Include="Content\b4\text_files\api.js.download" />
+    <Content Include="Content\b4\text_files\bootstrap.js.download" />
+    <Content Include="Content\b4\text_files\clarity.js.download" />
+    <Content Include="Content\b4\text_files\css" />
+    <Content Include="Content\b4\text_files\custom.js.download" />
+    <Content Include="Content\b4\text_files\FormSubmit.js.download" />
+    <Content Include="Content\b4\text_files\init.js.download" />
+    <Content Include="Content\b4\text_files\j8geruwdux" />
+    <Content Include="Content\b4\text_files\jquery-3.2.1.min.js.download" />
+    <Content Include="Content\b4\text_files\jquery.min%281%29.js.download" />
+    <Content Include="Content\b4\text_files\jquery.min.js.download" />
+    <Content Include="Content\b4\text_files\js" />
+    <Content Include="Content\b4\text_files\js%281%29" />
+    <Content Include="Content\b4\text_files\js%282%29" />
+    <Content Include="Content\b4\text_files\js%283%29" />
+    <Content Include="Content\b4\text_files\js%284%29" />
+    <Content Include="Content\b4\text_files\js%285%29" />
+    <Content Include="Content\b4\text_files\plugin.js.download" />
+    <Content Include="Content\b4\text_files\recaptcha__en.js.download" />
+    <Content Include="Content\b4\web12" />
+    <Content Include="Content\assets\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Content\assets\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Content\assets\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Content\assets\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\assets\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Content\assets\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Content\assets\vendor\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="Content\assets\vendor\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Content\assets\vendor\bootstrap\js\bootstrap.js.map" />
+    <Content Include="Content\assets\vendor\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="Content\assets\vendor\boxicons\fonts\boxicons.eot" />
+    <Content Include="Content\assets\vendor\boxicons\fonts\boxicons.ttf" />
+    <Content Include="Content\assets\vendor\boxicons\fonts\boxicons.woff" />
+    <Content Include="Content\assets\vendor\boxicons\fonts\boxicons.woff2" />
+    <Content Include="Content\assets\vendor\icofont\fonts\icofont.woff" />
+    <Content Include="Content\assets\vendor\icofont\fonts\icofont.woff2" />
+    <Content Include="Content\assets\vendor\jquery\jquery.min.map" />
+    <Content Include="Content\assets\vendor\owl.carousel\LICENSE" />
+    <Content Include="Content\assets\vendor\owl.carousel\README.md" />
+    <Content Include="Content\assets\vendor\remixicon\remixicon.eot" />
+    <Content Include="Content\assets\vendor\remixicon\remixicon.less" />
+    <Content Include="Content\assets\vendor\remixicon\remixicon.ttf" />
+    <Content Include="Content\assets\vendor\remixicon\remixicon.woff" />
+    <Content Include="Content\assets\vendor\remixicon\remixicon.woff2" />
+    <Content Include="Content\icofont\fonts\icofont.woff" />
+    <Content Include="Content\icofont\fonts\icofont.woff2" />
+    <Content Include="Content\js\jquery.min.map" />
+    <Content Include="Content\js\LICENSE" />
+    <Content Include="Content\js\README.md" />
+    <Content Include="Content\img\d_hp_buy.webp" />
+    <Content Include="Content\img\d_hp_invest_new.webp" />
+    <Content Include="Content\img\d_hp_plot_land.webp" />
+    <Content Include="Content\img\d_hp_rent.webp" />
+    <Content Include="Content\img\wp8179173.webp" />
+    <Content Include="Content\video.cshtml" />
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Content\dash\webfonts\fa-brands-400.eot" />
+    <Content Include="Content\dash\webfonts\fa-brands-400.ttf" />
+    <Content Include="Content\dash\webfonts\fa-brands-400.woff" />
+    <Content Include="Content\dash\webfonts\fa-brands-400.woff2" />
+    <Content Include="Content\dash\webfonts\fa-regular-400.eot" />
+    <Content Include="Content\dash\webfonts\fa-regular-400.ttf" />
+    <Content Include="Content\dash\webfonts\fa-regular-400.woff" />
+    <Content Include="Content\dash\webfonts\fa-regular-400.woff2" />
+    <Content Include="Content\dash\webfonts\fa-solid-900.eot" />
+    <Content Include="Content\dash\webfonts\fa-solid-900.ttf" />
+    <Content Include="Content\dash\webfonts\fa-solid-900.woff" />
+    <Content Include="Content\dash\webfonts\fa-solid-900.woff2" />
+    <None Include="Scripts\jquery-3.7.0.intellisense.js" />
+    <Content Include="Scripts\jquery-3.7.0.js" />
+    <Content Include="Scripts\jquery-3.7.0.min.js" />
+    <Content Include="Scripts\jquery-3.7.0.slim.js" />
+    <Content Include="Scripts\jquery-3.7.0.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\HomeMaster.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Properties.cshtml" />
+    <Content Include="Views\Home\Land.cshtml" />
+    <Content Include="Views\Home\Raw.cshtml" />
+    <Content Include="Views\Home\House.cshtml" />
+    <Content Include="Views\Home\OldProperties.cshtml" />
+    <Content Include="Views\Home\BecomeMember.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\Feedback.cshtml" />
+    <Content Include="Views\Shared\AdminMaster.cshtml" />
+    <Content Include="Views\AdminZone\Index.cshtml" />
+    <Content Include="Views\Home\Enquiery.cshtml" />
+    <Content Include="Views\AdminZone\ContactMGMT.cshtml" />
+    <Content Include="Views\AdminZone\registorMGMT.cshtml" />
+    <Content Include="Views\AdminZone\Changepass.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\img1\" />
+    <Folder Include="Content\video - Copy\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\jquery-3.7.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.7.0.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49781</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44393/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
